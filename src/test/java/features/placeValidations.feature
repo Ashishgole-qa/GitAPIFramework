@@ -11,13 +11,12 @@ Scenario Outline: Verify if Place is being Succesfully added using AddPlaceAPI
 Examples:
 	|name 	 | language |address		   |
 	|Ashish  |  English |World cross center|
-#	|Sahil   |  Spanish |Sea cross center  |
+	|Sahil   | Spanish  |Sea cross center  |
 
 @DeletePlace @Regression
 Scenario: Verify if Delete Place functionality is working
-
 	Given DeletePlace Payload
-	When user calls "deletePlaceAPI" with "POST" http request
+	When user calls "DeletePlaceAPI" with "POST" http request
 	Then the API call got success with status code 200
 	And "status" in response body is "OK"
 	 
